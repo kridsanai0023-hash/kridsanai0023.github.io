@@ -1,0 +1,208 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(45deg, #ff6b9d, #ffc0cb, #ff8fa3);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            animation: backgroundShift 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes backgroundShift {
+            0% {
+                background: linear-gradient(45deg, #ff6b9d, #ffc0cb, #ff8fa3);
+            }
+
+            100% {
+                background: linear-gradient(45deg, #ff8fa3, #ff6b9d, #ffc0cb);
+            }
+        }
+
+        .main {
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 6rem;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+            animation: bounce 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .happy-birth {
+            font-size: 6rem;
+        }
+
+        .day-text {
+            font-size: 5rem;
+            color: #ffeb3b;
+            animation-delay: 0.5s;
+        }
+
+        .my-baby {
+            margin-top: 30px;
+            align-self: center;
+            text-align: center;
+        }
+
+        .my-baby h1 {
+            font-size: 6rem;
+            color: #ff1744;
+            animation-delay: 1s;
+        }
+
+        .mon {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        a {
+            background: linear-gradient(45deg, #ff4081, #ff6ec7);
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            padding: 15px 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+            transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            display: inline-block;
+        }
+
+        a:hover,
+        a:active {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 64, 129, 0.6);
+            background: linear-gradient(45deg, #ff6ec7, #ff4081);
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff1744;
+            font-size: 20px;
+            animation: floating 3s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        .heart:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            top: 25%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(3) {
+            top: 60%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(4) {
+            top: 70%;
+            right: 10%;
+            animation-delay: 0.5s;
+        }
+
+        /* Responsive สำหรับหน้าจอเล็ก */
+        @media (max-width: 480px) {
+            .main {
+                padding: 15px;
+            }
+
+            h1 {
+                margin: 5px 0;
+            }
+
+            .my-baby {
+                margin-top: 20px;
+            }
+
+            a {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- หัวใจลอยๆ -->
+    <div class="heart">💖</div>
+    <div class="heart">💕</div>
+    <div class="heart">💗</div>
+    <div class="heart">💓</div>
+
+    <div class="main">
+        <h1 class="happy-birth">HAPPY</h1>
+        <h1 class="happy-birth">BIRTH</h1>
+        <h1 class="day-text">DAY</h1>
+
+        <div class="my-baby">
+            <h1>MY</h1>
+            <h1>BABY</h1>
+        </div>
+
+        <div class="mon">
+            <a href="/sec.html" id="buttom">💝 For You 💝</a>
+        </div>
+    </div>
+
+    <script>
+        // เพิ่มเอฟเฟกต์สั่นเมื่อโหลดหน้า
+        window.addEventListener('load', function () {
+            document.body.style.animation = 'shake 0.5s ease-in-out';
+        });
+    </script>
+</body>
+
+</html>
