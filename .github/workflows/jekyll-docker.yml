@@ -1,4 +1,4 @@
-name: Deploy HTML to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -24,19 +24,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
       - name: Fix file paths
         run: |
-          sed -i 's|src="/|src="./|g' *.html
-          sed -i 's|href="/|href="./|g' *.html
+          # แก้ไข path ในไฟล์ HTML
+          find . -name "*.html" -type f -exec sed -i 's|src="/|src="./|g' {} \;
+          find . -name "*.html" -type f -exec sed -i 's|href="/|href="./|g' {} \;
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
