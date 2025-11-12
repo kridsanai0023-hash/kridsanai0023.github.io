@@ -21,12 +21,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check
         uses: actions/checkout@v4
 
       - name: Fix file paths
         run: |
-          # แก้ไข path ในไฟล์ HTML
           find . -name "*.html" -type f -exec sed -i 's|src="/|src="./|g' {} \;
           find . -name "*.html" -type f -exec sed -i 's|href="/|href="./|g' {} \;
           
